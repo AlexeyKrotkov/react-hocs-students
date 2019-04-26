@@ -1,0 +1,6 @@
+.photos {
+  max-width: 500px;
+  & > img {
+    width: 100px;
+  }
+}
