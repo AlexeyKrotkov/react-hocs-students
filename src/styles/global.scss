@@ -1,0 +1,64 @@
+html, body, #root  {
+  height: 100%;
+  font-family: 'Source Sans Pro', serif;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: #282c34;
+}
+
+%form-element-base-styles {
+  padding: 0 20px;
+  border: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  outline: none;
+  &:focus {
+    box-shadow: inset 0 0 0 3px lightskyblue;
+  }
+}
+
+%field-dimensions {
+  height: 50px;
+  width: 300px;
+}
+
+input {
+  @extend %field-dimensions;
+  @extend %form-element-base-styles;
+  &::placeholder {
+    color: rgba(black, 0.3)
+  }
+}
+
+button {
+  @extend %field-dimensions;
+  @extend %form-element-base-styles;
+  font-weight: bold;
+  font-size: 20px;
+  background: lightgreen;
+  &:hover {
+    background: darken(lightgreen, 10%);
+  }
+  &:active {
+    box-shadow: none;
+    background: lighten(black, 50%);
+  }
+  &:disabled {
+    background: darken(white, 30%);
+    color: lightslategray;
+  }
+}
+
+select {
+  @extend %field-dimensions;
+  @extend %form-element-base-styles;
+}
